@@ -1,0 +1,6 @@
+#filename='testing.pkl'
+   #loaded_model=pickle.load(open(filename,'rb'))
+    #tumors=pd.read_excel(".../dataset/test set.xlx")
+    #pred_result=loaded_model.predict(tumors)
+    #prediction=pred_result[0]
+    #return render_template('index.html',prediction)
