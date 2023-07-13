@@ -16,12 +16,12 @@ def hello_world():
 @kpp.route('/',methods=['GET', 'POST'])
 def savefile():
     dfile=request.files["dfile"]
-    filename = secure_filename(dfile.filename)
-    UPLOAD_FOLDER = 'D:/college/inal year/ml/lask application/dataset/'
-    dfile.save(os.path.join(UPLOAD_FOLDER, filename)) 
+    sfilename = secure_filename(dfile.filename)
+    UPLOAD_FOLDER = r'./dataset/'
+    dfile.save(os.path.join(UPLOAD_FOLDER,sfilename)) 
     filename='testing.pkl'
     loaded_model=pickle.load(open(filename,'rb'))   
-    tumors=pd.read_excel('D:/college/inal year/ml/lask application/dataset/test_set.xlsx')
+    tumors=pd.read_excel(r'./test_set.xlsx')
     prediction=loaded_model.predict(tumors)
     
     return render_template('index.html',pre=prediction)
