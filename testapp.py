@@ -17,7 +17,7 @@ def hello_world():
 def savefile():
     dfile=request.files["dfile"]
     filename = secure_filename(dfile.filename)
-    UPLOAD_FOLDER = './dataset/'
+    UPLOAD_FOLDER = 'D:/college/inal year/ml/lask application/dataset/'
     dfile.save(os.path.join(UPLOAD_FOLDER, filename)) 
     filename='testing.pkl'
     loaded_model=pickle.load(open(filename,'rb'))   
